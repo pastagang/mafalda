@@ -124,26 +124,5 @@ function makeSession() {
 }
 
 export function getUserName() {
-  const weather = getWeather();
-  const settings = getSettings();
-
-  let name = settings.username?.trim() ?? 'anonymous nudelfan';
-
-  if (weather.mantraName) {
-    // we can replace, because mantra and emotions are never at the same day
-    name = getCurrentMantra();
-  }
-
-  if (weather.emoticons) {
-    // we can replace, because mantra and emotions are never at the same day
-    name = EMOTICONS[Math.floor(Math.random() * EMOTICONS.length)];
-  }
-
-  if (weather.palindromeNames) {
-    name += name.split('').reverse().splice(1).join('');
-  }
-
-  if (name) return name;
-
-  return name;
+  return 'lwlsn';
 }
